@@ -13,6 +13,15 @@ namespace Solution
 
         public override bool Hit()
         {
+            bool hasKey = mapGenerator.player.inventory.HasItem("Key",2);
+            if (hasKey)
+            {
+                YouWin.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("Need key :You have:" + mapGenerator.player.inventory.GetItemCount("Key"));
+            }
             // ตรวจสอบว่าผู้เล่นมีไอเท็มที่ต้องการหรือไม่
             YouWin.SetActive(true);
             Debug.Log("You win");
